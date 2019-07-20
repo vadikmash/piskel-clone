@@ -23,3 +23,16 @@ img {
 h1 {
   text-align: center;
 }
+
+strong {
+  font-size: 14pt;
+}
+
+a {
+  padding: 1vw;
+  font-size: 12pt;
+}
+
+.example {
+  display: inline-block;
+}
