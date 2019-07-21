@@ -1,11 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Piskel Clone by vadikmash</title>
-  </head>
-  <body>
-    <script type="text/javascript" src="app.bundle.js"></script>
-  </body>
-</html>
-
+ <html lang="en">
+    <head>
+      <title>Piskel Clone by vadikmash</title>
+      <meta name="google-signin-scope" content="profile email">
+      <meta name="google-signin-client_id" content="617312604420-lmg08nnal3kk1jv3mopkep45vduqk39i.apps.googleusercontent.com">
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+    </head>
+    <body>
+      <header>
+          <h1>Piskel-Clone</h1>
+          <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" id="a"></div>
+        </header>
+        <main>
+          <div class="tools-wrapper" id="tools-wrapper">
+            <ul class="tool-picker">
+              <li id="pencil">
+                <img src="de476d8e412c6a57ee46315d03cd60ec.png" alt="pencil-icon" class="tool-icon">
+                <span>(P)</span>
+              </li>
+              <li id="bucket">
+                <img src="dc0c3d772410a5bb267cba4a6424ec24.png" alt="bucket-icon" class="tool-icon">
+                <span>(B)</span>
+              </li>
+              <li id="samepixels">
+                <img src="3a27935d38c705d69f299bd23a5acc2c.png" alt="samepixels-icon" class="tool-icon">
+                <span>(U)</span>
+              </li>
+              <li id="eraser">
+                <img src="a15754a34f7f6bc40aa68c3c7d88a5a7.png" alt="eraser-icon" class="tool-icon">
+                <span>(E)</span>
+              </li>
+              <li id="picker">
+                <img src="0b08562cf2ce3321b7576170efd4ce20.png" alt="pick-icon" class="tool-icon">
+                <span>(C)</span>
+              </li>
+              <li id="reset">
+                <img src="60f305de56a834c2a460134f8c10291d.png" alt="reset-icon" class="tool-icon">
+                <span>(R)</span>
+              </li>
+            </ul>
+            <ul class="color-picker">
+              <li id="current">
+                <input type="color" id="color-selector">
+                <input type="color" id="secondary-color-selector">
+              </li>
+              <li id="prev">
+                <div class="color-circle" id="prev-indicator"></div>
+              </li>
+              <li class="red" id="red">
+                <div class="color-circle"></div>
+              </li>
+              <li class="blue" id="blue">
+                <div class="color-circle"></div>
+              </li>
+            </ul>
+          </div>
+          <div class="canvas-wrapper" id="canvas-wrapper">
+            <div class="palette-background" id="palette-background">
+              <canvas class="palette" id="palette" width="512" height="512">
+                <!-- fallback contect -->
+                <p>canvas is not supported :(</p>
+              </canvas>
+            </div>
+            <div class="size-manager" id="size-manager">
+              <div id="button-wrapper">
+                <div><span>Canvas size:</span></div>
+                <div class="size-button" id="size32"> 32x32</div>
+                <div class="size-button size-button-selected" id="size64">64x64</div>
+                <div class="size-button" id="size128">128x128</div>
+              </div>
+              <span class= "coordinats" id="coordinats">[0, 0]</span>
+            </div>
+          </div>
+          <div class="preview-wrapper">
+            <div class="preview-box">
+              <h3>preview</h3>
+              <div class="preview-img-wrapper">
+                <img id="preview" alt="preview" width="250" height="250">
+              </div>
+              <br>
+              <div class="fps-range-wrapper" id="fps-rate-wrapper">
+                <span class="fps-indicator" id="fps-indicator">8 fps</span>
+                <input class="fps-range" id="fps-range" type="range" min="1" max="24" value="8">
+              </div>
+              <div class="frame-rate-wrapper" id="fps-wrapper">
+                <div class="fps-button" id="4fps">4fps</div>
+                <div class="fps-button" id="8fps">8fps</div>
+                <div class="fps-button" id="16fps">16fps</div>
+              </div>
+            </div>
+            <div class="button-wrapper">
+              <div class="play button" id="play">
+                <span>Play (A)</span>
+              </div>
+              <div class="fullscreen button" id="fullscreen">
+                <span>Full Screen (F)</span>
+              </div>
+              <div class="gif-save button" id="gif-save">
+                <span>Save .gif (G)</span>
+              </div>
+              <div class="apng-save button" id="apng-save">
+                <span>Save .apng (N)</span>
+              </div>
+              <div class="load button" id="load">
+                <span>Load .piscelc (L)</span>
+              </div>
+              <div class="save button" id="save">
+                <span>Save .piscelc (S)</span>
+              </div>
+              <div class="local-load button" id="local-load">
+                <span>from LocalStorage (O)</span>
+              </div>
+              <div class="local-save button" id="local-save">
+                <span>to LocalStorage (T)</span>
+              </div>
+                <input type="file" name="file" class="open-file-button" id="open-file">
+              </div>
+            </div>
+          </div>
+        </main>
+        <script type="text/javascript" src="app.bundle.js"></script>
+    </body>
+  </html>
